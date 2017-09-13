@@ -60,7 +60,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+<<<<<<< HEAD
         <script src="js/fuckery.js"></script>
+=======
+        <!-- <script src="js/fuckery.js"></script> -->
+            <script>
+    function Ninja(name){
+        this.name = name;
+        this.health = 100;
+        var speed = 3;
+        var strength = 3;
+        this.sayName = function() {
+            alert(this.name);
+        }
+        this.showStats = function(){
+            alert("strength: " + strength + " speed: " + speed + " health: " + this.health)
+        }
+        this.drinkSake = function(){
+            this.health += 10;
+        }
+        this.punch = function(otherNinja){
+            if (otherNinja.constructor == Ninja){
+            otherNinja.health -= 5;
+            alert(otherNinja.name + " was punched by " + this.name + " and lost 5 health")
+            }
+            else{alert("Can not punch a non ninja")
+        }
+        }
+        this.kick = function(otherNinja){
+            if(otherNinja.constructor == Ninja){
+            otherNinja.health -= strength * 5;
+            alert(otherNinja.name + " was kicked by " + this.name + " and lost " + (strength*5) + " health");
+            }
+            else{
+                alert("Can not kick a non Ninja");
+            }
+        }
+    }
+    var blue_ninja = new Ninja("Akira");
+    var red_ninja = new Ninja("Guts");
+    blue_ninja.showStats();
+    red_ninja.punch(blue_ninja);
+    blue_ninja.showStats();
+    red_ninja.showStats();
+    blue_ninja.kick(red_ninja);
+    red_ninja.showStats();
+    alert(red_ninja.constructor == Ninja);
+    red_ninja.kick("yo mama");
+    blue_ninja.punch(34);
+</script>
+
+>>>>>>> origin/master
         <style>
         body {
         background-color:black;
