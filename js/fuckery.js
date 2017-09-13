@@ -490,6 +490,8 @@
 // var joe = new Person("Joe", 23);
 // joe.greet();
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -520,15 +522,66 @@
 // console.log(obj2.anotherProperty); // anotherProperty! <= THIS IS THE COOL PART!
 
 
-function Cat( cat_name ) {
-    var name = cat_name;
-    this.getName = function() {
-        return name;
-    };
-}
-// adding a method to the cat prototype
-Cat.prototype.sayHi = function(){
-    console.log('meow');
-};
-// adding properties
+// function Cat( cat_name ) {
+//     var name = cat_name;
+//     this.getName = function() {
+//         return name;
+//     };
+// }
+// // adding a method to the cat prototype
+// Cat.prototype.sayHi = function(){
+//     console.log('meow');
+// };
+// // adding properties
+// Cat.prototype.numLegs = 4;
+// var muffin = new Cat('Muffin');
+// var biscuit = new Cat('Biscuit');
+// console.log(muffin, biscuit)
+// // we access prototype properties the same we would access 'own' properties
+// muffin.sayHi();
+// biscuit.sayHi();
+// console.log(muffin.numLegs);
+// // poor mutant cats: muffin.__proto__.numLegs ++;
+// // doing this to muffin will mess up all the cats!
 
+
+// Create a new class called Ninja with the following attributes:
+
+// name
+// health
+// speed (private)
+// strength (private)
+// Speed and strength should be 3 by default. Health should be 100 by default.
+
+// The Ninja class should have the following methods:
+
+// sayName() - This should log that Ninja's name to the console.
+// showStats() - This should show the Ninja's Strength and Speed, as well as their health.
+// drinkSake() - This should add +10 Health to the Ninja
+// Example Outputs
+// var ninja1 = new Ninja("Hyabusa");
+// ninja1.sayName();
+// // -> "My ninja name is Hyabusa!"
+// ninja1.showStats();
+// // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+
+function Ninja(name, health, speed, strength){
+    this.name = name;
+    this.health = 100;
+    var speed = 3;
+    var strength = 3;
+    this.sayName = function(){
+        alert(`Name: ${this.name}`);    
+    }
+    this.drinkSake = function(){
+        this.health = this.health + 10;
+        // alert('I drank sake, my health is now at ' + this.health + '!')
+    }
+    this.showStats = function(){
+        alert(`Name: ${this.name}, Health: ${this.health}, Speed: ${speed}, Strength: ${strength}`);
+    }
+}
+var joe = new Ninja('Joe')
+joe.drinkSake();
+joe.sayName();
+joe.showStats();
