@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http'; // <-- Import HttpModule
     MyComponentComponent
   ],
   imports: [
+    // add modules (imported up top) here
     BrowserModule,
     FormsModule,
     HttpModule
