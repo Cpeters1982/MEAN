@@ -24,4 +24,3 @@ var server = http.createServer(function (request, response){
 server.listen(6789);
 // print to terminal window
 console.log("Running in localhost at port 6789");
-// commit new shit
